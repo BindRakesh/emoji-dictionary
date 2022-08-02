@@ -1,11 +1,9 @@
-
-
 .heading {
   display: flex;
   justify-content: center;
 }
 
-.input{
+.input {
   size: 2rem;
   width: 250px;
   padding: 0.5rem;
@@ -13,7 +11,7 @@
   margin: auto;
 }
 
-.content{
+.content {
   width: 300px;
   height: auto;
   display: flex;
@@ -22,6 +20,14 @@
   justify-content: center;
 }
 
-.emojis{
-  
+.emojis {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.emojis p {
+  font-size: 2rem;
+  margin: 0 0.5rem;
+  cursor: pointer;
 }
