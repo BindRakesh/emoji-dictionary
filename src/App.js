@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import React, { useState } from "react";
 import './App.css';
 
 function App() {
+
+  
+
+  
+
+  function onChangeHandler(e){
+    var userInput = e.target.value;
+    console.log(userInput)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2 className="heading">Emoji Dictionary</h2>
+      <input class="input" onChange={onChangeHandler}></input>
+      
+      <div className="content">{"hello"}</div>
+
+      <div className="emojis"></div>
+
     </div>
   );
 }
