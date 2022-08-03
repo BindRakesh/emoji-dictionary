@@ -27,8 +27,8 @@ function App() {
 
   function onClickHandler(e){
     var emojiKey = e.target.textContent;
-    var emojiMeaning = emojiDictionary[emojiKey+" "+emojiKey];
-    setMeaning(emojiMeaning);
+    var emojiMeaning = emojiDictionary[emojiKey];
+    setMeaning(emojiMeaning+" "+ emojiKey);
   }
 
   return (
