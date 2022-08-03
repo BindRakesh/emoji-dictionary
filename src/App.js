@@ -28,7 +28,11 @@ function App() {
   function onClickHandler(e){
     var emojiKey = e.target.textContent;
     var emojiMeaning = emojiDictionary[emojiKey];
+<<<<<<< HEAD
     setMeaning(emojiMeaning);
+=======
+    setMeaning(emojiMeaning+" "+ emojiKey);
+>>>>>>> parent of cf09177 (error commit)
   }
 
   return (
