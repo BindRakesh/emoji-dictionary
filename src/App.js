@@ -3,6 +3,8 @@ import './App.css';
 
 function App() {
 
+  const [meaning, setMeaning] = useState('Type or click on emoji to get meaning')
+
   var emojiDictionary = {
     "😊": "Smiling face",
     "🌹": "Rose",
@@ -16,19 +18,29 @@ function App() {
 
   function onChangeHandler(e){
     var userInput = e.target.value;
-    console.log(userInput)
+    var emojiMeaning = emojiDictionary[userInput];
+    setMeaning(emojiMeaning+" "+userInput);
+    if(emojiMeaning === undefined){
+      setMeaning("We don't have this emoji in our Database")  
+    }
+  }
+
+  function onClickHandler(e){
+    var emojiKey = e.target.textContent;
+    var emojiMeaning = emojiDictionary[emojiKey];
+    setMeaning(emojiMeaning);
   }
 
   return (
     <div className="App">
       <h2 className="heading">Emoji Dictionary</h2>
-      <input class="input" onChange={onChangeHandler}></input>
+      <input className="input" onChange={onChangeHandler}></input>
       
-      <div className="content">{"hello"}</div>
+      <div className="content">{meaning}</div>
 
       <div className="emojis">
         {emojiList.map(e => {
-          return <p>{e}</p>
+          return <p key={e} onClick={e => onClickHandler(e)}>{e}</p>
         })}
       </div>
 
